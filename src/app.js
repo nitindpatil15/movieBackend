@@ -5,7 +5,7 @@ import cors from "cors";
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://master--movie-ticket-booking-ur.netlify.app/",
   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
   headers: ["Content-Type", 'Authorization', 'auth-token'],
   credentials: true,
