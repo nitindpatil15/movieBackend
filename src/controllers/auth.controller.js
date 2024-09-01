@@ -154,8 +154,8 @@ const superAdminLogin = asynchandler(async (req, res) => {
 
   const token = generateToken(superAdmin._id);
   return res
-    .cookie("accessToken", token, { httpOnly: true })
-    .json(new ApiResponse(200, superAdmin, "Login successful"));
+    .cookie("accessToken", token)
+    .json(new ApiResponse(200, {superAdmin,token}, "Login successful"));
 });
 
 const AdminLogin = asynchandler(async (req, res) => {
@@ -185,8 +185,8 @@ const AdminLogin = asynchandler(async (req, res) => {
 
   const token = generateToken(Admin._id);
   return res.status(200)
-    .cookie("accessToken", token, { httpOnly: true })
-    .json(new ApiResponse(200, Admin, "Login successful"));
+    .cookie("accessToken", token)
+    .json(new ApiResponse(200, {Admin,token}, "Login successful"));
 });
 
 const logoutforAll = asynchandler(async (req, res) => {
